@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>state Practice 파트1</title>
+</head>
+<body>
+  <div id="root"></div>
+</body>
+<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+function App() {
+  // [counter(데이터), setCounter(데이터 값을 수정한 값)]
+  const [minutes, setMinutes] = React.useState(0);
+  const onChange = (event) => {
+    setMinutes(event.target.value);
+  };
+  const reset = () => setMinutes(0);
+  return (
+  <div>
+    <h1>Super Converter</h1>
+    <div>
+    <label for="minutes">Minutes</label>
+    <input 
+    value={minutes} 
+    id="minutes" 
+    placeholder="Minutes" 
+    type="number" 
+    onChange={onChange}
+    />
+    </div>
+    <div>
+    <label for="hours">Hours</label>
+    <input 
+    value={Math.round(minutes / 60)} 
+    id="hours" 
+    placeholder="Hours" 
+    type="number"
+    disabled
+    />
+  </div>
+    <button onClick={reset}>Reset</button>
+  </div>
+);
+}
+//Math.round(minutes / 60)에서 Math.round는 반올림 역할을해준다
+//render: 사용자에게 보여준다.
+ReactDOM.render(<App />, root);
+</script>
+</html>

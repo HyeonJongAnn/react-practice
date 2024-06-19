@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    body {
+        background-color: #87CEEB;
+    }
+
+    .container {
+        width: 768px;
+        height: 1024px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .form-group input {
+        width: 250px;
+        height: 30px;
+        border-radius: 5px;
+        border: none;
+    }
+
+    .submit-btn {
+        width: 100px;
+        height: 40px;
+        background-color: #4CAF50;
+        color: white;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <form>
+            <div class="form-group">
+                <label for="username">아이디:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">비밀번호:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="email">이메일:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="profile">프로필 이미지:</label>
+                <input type="file" id="profile" name="profile" accept="image/*" required>
+            </div>
+            <div class="form-group">
+                <label for="nickname">닉네임:</label>
+                <input type="text" id="nickname" name="nickname" required>
+            </div>
+            <div class="form-group">
+                <label for="dob">생년월일:</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+            <input type="submit" value="회원가입" class="submit-btn">
+        </form>
+    </div>
+</body>
+</html>
